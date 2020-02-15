@@ -1,10 +1,11 @@
 <template>
   <div>
-    <!-- interpolation -->
-    <h1>{{title}}</h1>
-    <h2>{{count}}</h2>
-    <button @click="onClickAdd">Add</button>
-
+    <h1>v-model</h1>
+    <!-- MVVM -->
+    <input v-model="message" type="text" placeholder="Enter your message">
+    <div>{{message}}</div>
+    <button @click="message=''">Reset</button>
+    
   </div>
 </template>
 
@@ -13,17 +14,12 @@ export default {
   name:"app",
   data() {
     return {
-      title:"Jackmobile www.facebook.com/jackultimate",
-      count:0
+      message:""
     }
   },
-  methods: {
-    onClickAdd(){
-      this.count++
-    }
-  },
-};
+}
 </script>
 
 <style>
+
 </style>
