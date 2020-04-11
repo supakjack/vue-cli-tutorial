@@ -6,6 +6,7 @@ import Demo2_EventMethod from '../views/Demo2_EventMethod.vue'
 import  Demo3_Data from '../views/Demo3_Data.vue'
 import Demo4_Compute from '../views/Demo4_Compute.vue'
 import Abc from '../views/Demo5_Binding.vue'
+import Demo6_Form from '../views/Demo6_Form.vue'
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,11 @@ const routes = [
     path:"/demo5",
     name:"demo5",
     component:Abc
+  },
+  {
+    path:"/demo6",
+    name:"demo6",
+    component:Demo6_Form
   }
 ]
 
