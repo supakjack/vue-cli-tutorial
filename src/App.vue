@@ -1,71 +1,35 @@
 <template>
   <div id="app">
-    <ul>
-      <li>
-        <router-link to="/">
-          <button>Home</button>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/demo1">
-          <button>Demo1</button>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/demo2">
-          <button>Demo2 Event</button>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/demo3">
-          <button>Demo3 Data</button>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/demo4">
-          <button>Demo4 Compute</button>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/demo5">
-          <button>Demo5 Binding</button>
-        </router-link>
-      </li>
-       <li>
-        <router-link to="/demo6">
-          <button>Demo6 Form</button>
-        </router-link>
-      </li>
-    </ul>
-    <router-view></router-view>
-    <span class="title">123</span>
+    <Header />
+    <Content />
+    <Footer @onClock="onClock" title="Copyright 2020 By JackMobile" color="gray" />
+    <span>{{time}}</span>
   </div>
 </template>
 
 <script>
+import Header from "@/components/layouts/Header.vue";
+import Footer from "@/components/layouts/Footer.vue";
+import Content from "@/components/layouts/Content.vue";
+import moment from "moment";
 export default {
-  name: "app"
+  name: "app",
+  methods: {
+    onClock(value) {
+      this.time = moment(value).format("MM/DD/YYYY hh:mm:ss");
+    }
+  },
+  data() {
+    return {
+      time: ""
+    };
+  },
+  components: {
+    Header,
+    Footer,
+    Content
+  }
 };
 </script>
-
 <style scoped>
-ul {
-  margin: 0;
-  padding: 0;
-}
-li {
-  display: inline;
-  margin-right: 1rem;
-}
-
-.title {
-  font-size: 30px;
-  color: green;
-}
-</style>
-
-<style>
-.content {
-  color: violet;
-}
 </style>
